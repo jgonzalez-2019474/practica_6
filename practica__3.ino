@@ -24,8 +24,7 @@ int i;
 
 LiquidCrystal_I2C LCD_javier(POU_LCD, Columnas, Filas);
 
-void setup()
-{
+void configurarPines() {
   pinMode(LED_1, OUTPUT);
   pinMode(LED_2, OUTPUT);
   pinMode(LED_3, OUTPUT);
@@ -43,6 +42,14 @@ void setup()
   pinMode(echo, INPUT);
   LCD_javier.init();
   LCD_javier.backlight();
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
+  pinMode(Buzzer, OUTPUT);
+}
+
+void setup()
+{
+  configurarPines();
 }
 
 
